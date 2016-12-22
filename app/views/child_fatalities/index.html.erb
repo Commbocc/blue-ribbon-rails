@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Child Fatalities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dod</th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>County</th>
+      <th>Priorchild</th>
+      <th>Priorverchild</th>
+      <th>Priortwelve</th>
+      <th>Priorfive</th>
+      <th>Priorfiveservices</th>
+      <th>Causal</th>
+      <th>Narrative</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @child_fatalities.each do |child_fatality| %>
+      <tr>
+        <td><%= child_fatality.dod %></td>
+        <td><%= child_fatality.gender %></td>
+        <td><%= child_fatality.age %></td>
+        <td><%= child_fatality.county %></td>
+        <td><%= child_fatality.priorChild %></td>
+        <td><%= child_fatality.priorVerChild %></td>
+        <td><%= child_fatality.priorTwelve %></td>
+        <td><%= child_fatality.priorFive %></td>
+        <td><%= child_fatality.priorFiveServices %></td>
+        <td><%= child_fatality.causal %></td>
+        <td><%= child_fatality.narrative %></td>
+        <td><%= link_to 'Show', child_fatality %></td>
+        <td><%= link_to 'Edit', edit_child_fatality_path(child_fatality) %></td>
+        <td><%= link_to 'Destroy', child_fatality, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Child Fatality', new_child_fatality_path %>

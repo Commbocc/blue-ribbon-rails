@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dod: 2016-12-22
+  gender: MyString
+  age: 1
+  county: MyString
+  priorChild: false
+  priorVerChild: false
+  priorTwelve: false
+  priorFive: false
+  priorFiveServices: false
+  causal: MyString
+  narrative: MyText
+
+two:
+  dod: 2016-12-22
+  gender: MyString
+  age: 1
+  county: MyString
+  priorChild: false
+  priorVerChild: false
+  priorTwelve: false
+  priorFive: false
+  priorFiveServices: false
+  causal: MyString
+  narrative: MyText

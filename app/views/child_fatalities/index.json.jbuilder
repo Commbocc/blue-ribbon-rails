@@ -1,0 +1,1 @@
+json.array! @child_fatalities, partial: 'child_fatalities/child_fatality', as: :child_fatality

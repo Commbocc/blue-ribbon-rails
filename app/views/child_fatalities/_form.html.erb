@@ -1,0 +1,72 @@
+<%= form_for(child_fatality) do |f| %>
+  <% if child_fatality.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(child_fatality.errors.count, "error") %> prohibited this child_fatality from being saved:</h2>
+
+      <ul>
+      <% child_fatality.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :dod %>
+    <%= f.date_select :dod %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %>
+    <%= f.text_field :gender %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age %>
+    <%= f.number_field :age %>
+  </div>
+
+  <div class="field">
+    <%= f.label :county %>
+    <%= f.text_field :county %>
+  </div>
+
+  <div class="field">
+    <%= f.label :priorChild %>
+    <%= f.check_box :priorChild %>
+  </div>
+
+  <div class="field">
+    <%= f.label :priorVerChild %>
+    <%= f.check_box :priorVerChild %>
+  </div>
+
+  <div class="field">
+    <%= f.label :priorTwelve %>
+    <%= f.check_box :priorTwelve %>
+  </div>
+
+  <div class="field">
+    <%= f.label :priorFive %>
+    <%= f.check_box :priorFive %>
+  </div>
+
+  <div class="field">
+    <%= f.label :priorFiveServices %>
+    <%= f.check_box :priorFiveServices %>
+  </div>
+
+  <div class="field">
+    <%= f.label :causal %>
+    <%= f.text_field :causal %>
+  </div>
+
+  <div class="field">
+    <%= f.label :narrative %>
+    <%= f.text_area :narrative %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

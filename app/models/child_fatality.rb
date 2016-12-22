@@ -1,0 +1,2 @@
+class ChildFatality < ApplicationRecord
+end

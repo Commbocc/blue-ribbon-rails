@@ -1,0 +1,2 @@
+json.extract! child_fatality, :id, :dod, :gender, :age, :county, :priorChild, :priorVerChild, :priorTwelve, :priorFive, :priorFiveServices, :causal, :narrative, :created_at, :updated_at
+json.url child_fatality_url(child_fatality, format: :json)

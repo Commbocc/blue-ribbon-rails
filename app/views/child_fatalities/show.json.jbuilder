@@ -1,0 +1,1 @@
+json.partial! "child_fatalities/child_fatality", child_fatality: @child_fatality
