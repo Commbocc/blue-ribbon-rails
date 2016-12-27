@@ -11,11 +11,10 @@ $ ->
 			return
 	}, '#hc-main-nav-sections > li'
 
-	# navigationAPI = "http://hcflgov.net/api/navigation"
-	navigationAPI = "<%= asset_path '/assets/navigation.json' %>"
 
-	# templateDir = "{{ '/templates/navigation' | prepend: site.baseurl }}"
-	templateDir = "<%= asset_path '/assets/navigation' %>"
+	# navigationAPI = "http://hcflgov.net/api/navigation"
+	navigationAPI = '/navigation/navigation.json'
+	templateDir =  '/navigation/templates'
 
 	$.getJSON(navigationAPI).success (data) ->
 
