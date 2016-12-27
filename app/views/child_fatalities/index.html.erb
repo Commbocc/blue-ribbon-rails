@@ -13,7 +13,7 @@
 	Last Updated: <%= @child_fatalities.last_updated.to_formatted_s(:long) if @child_fatalities.any? -%>
 </p>
 
-<%#= render 'child_fatalities/partials/charts' -%>
+<%= render 'child_fatalities/partials/charts' -%>
 
 <div class="table-responsive">
 	<table class="table table-striped">
@@ -48,5 +48,5 @@
 </p>
 
 <script type="text/javascript">
-	<%#= render partial: 'child_fatalities/partials/script', formats: [:js] -%>
+	<%= render partial: 'child_fatalities/partials/script', formats: [:js] -%>
 </script>

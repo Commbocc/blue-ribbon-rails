@@ -1,0 +1,7 @@
+<div class="row">
+	<%= content_tag :div, content_tag(:div, nil, id: 'byYear'), class: 'col-sm-12' unless params[:year].present? -%>
+	<%= content_tag :div, content_tag(:div, nil, id: 'byCause'), class: 'col-sm-4' unless params[:causal].present? -%>
+	<%= content_tag :div, content_tag(:div, nil, id: 'byGender'), class: 'col-sm-4' unless params[:gender].present? -%>
+	<%= content_tag :div, content_tag(:div, nil, id: 'byAge'), class: 'col-sm-4' unless params[:age].present? -%>
+	<%#= content_tag :div, content_tag(:div, nil, id: 'byCounty'), class: 'col-sm-4' unless params[:county].present? -%>
+</div>

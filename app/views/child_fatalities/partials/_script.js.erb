@@ -1,0 +1,133 @@
+$(function () {
+
+	$('#byCause').highcharts({
+		credits: {
+			enabled: true,
+			text: 'FL Dept. of Children & Families',
+			href: 'http://www.dcf.state.fl.us/childfatality/'
+		},
+		exporting: { enabled: false },
+		title: {
+			text: 'Fatalities By Causal Factor'
+		},
+		legend: {
+			layout: 'vertical'
+		},
+		plotOptions: {
+			pie: {
+				allowPointSelect: true,
+				cursor: 'pointer',
+				dataLabels: {
+					enabled: false
+				},
+				events: {
+					click: function(event) {
+						// console.log(event.point);
+						// alert(event.point.name);
+					}
+				},
+				showInLegend: true
+			}
+		},
+		series: [{
+			type: 'pie',
+			name: 'Fatalities',
+			data: <%= raw @child_fatalities.group_counts(:causal).to_a -%>
+		}]
+	});
+
+	$('#byYear').highcharts({
+		credits: {
+			enabled: true,
+			text: 'FL Dept. of Children & Families',
+			href: 'http://www.dcf.state.fl.us/childfatality/'
+		},
+		exporting: { enabled: false },
+		chart: {
+			type: 'line'
+		},
+		title: {
+			text: 'Fatalities By Year'
+		},
+		xAxis: {
+			categories: <%= @child_fatalities.group_counts(:year).map{|k,v| k.to_i} -%>
+		},
+		yAxis: {
+			title: {
+				text: 'Fatalities'
+			}
+		},
+		series: [{
+			name: 'Fatalities',
+			data: <%= @child_fatalities.group_counts(:year).map{|k,v| v} -%>
+		}]
+	});
+
+	$('#byAge').highcharts({
+		credits: {
+			enabled: true,
+			text: 'FL Dept. of Children & Families',
+			href: 'http://www.dcf.state.fl.us/childfatality/'
+		},
+		exporting: { enabled: false },
+		chart: {
+			type: 'column'
+		},
+		title: {
+			text: 'Fatalities By Age'
+		},
+		xAxis: {
+			categories: <%= @child_fatalities.group_counts(:age).map{|k,v| k} -%>
+		},
+		yAxis: {
+			title: {
+				text: 'Fatalities'
+			}
+		},
+		series: [{
+			name: 'Fatalities',
+			data: <%= @child_fatalities.group_counts(:age).map{|k,v| v} -%>
+		}]
+	});
+
+	$('#byGender').highcharts({
+		credits: {
+			enabled: true,
+			text: 'FL Dept. of Children & Families',
+			href: 'http://www.dcf.state.fl.us/childfatality/'
+		},
+		exporting: { enabled: false },
+		title: {
+			text: 'Fatalities By Gender'
+		},
+		// colors: ['#ef5e81', '#7cb5ec'],
+		plotOptions: {
+			pie: {
+				allowPointSelect: true,
+				cursor: 'pointer',
+				dataLabels: {
+					enabled: false
+				},
+				showInLegend: true
+			}
+		},
+		series: [{
+			type: 'pie',
+			name: 'Fatalities',
+			data: <%= raw @child_fatalities.group_counts(:gender).to_a -%>
+		}]
+	});
+
+	// $('#byCounty').highcharts({
+		// credits: { enabled: false },
+	// 	title: {
+	// 		text: 'Fatalities By County'
+	// 	},
+	// 	series: [{
+	// 		type: 'pie',
+	// 		name: 'Fatalities',
+	// 		data: <%#= raw @child_fatalities.group_counts(:county).to_a -%>
+	// 	}]
+	// });
+
+});
