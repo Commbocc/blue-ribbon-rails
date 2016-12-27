@@ -1,0 +1,10 @@
+<form class="form-inline">
+	<span class="lead pull-right">
+		<%= @child_fatalities.count %> Record(s)
+	</span>
+	<%= jumper(:year) -%>
+	<%= jumper(:causal) -%>
+	<%= jumper(:age) -%>
+	<%= jumper(:gender) -%>
+	<%= link_to 'Clear', child_fatalities_path, class: 'btn btn-danger', data: {confirm: 'Clear all Filters?'} -%>
+</form>

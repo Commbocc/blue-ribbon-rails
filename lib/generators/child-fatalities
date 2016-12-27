@@ -1,0 +1,1 @@
+rails g scaffold ChildFatality dod:date gender age:integer county priorChild:boolean priorVerChild:boolean priorTwelve:boolean priorFive:boolean priorFiveServices:boolean causal narrative:text

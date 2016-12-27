@@ -1,10 +1,11 @@
 class ChildFatalitiesController < ApplicationController
   before_action :set_child_fatality, only: [:show, :edit, :update, :destroy]
+  before_action :needs_to_scan?
 
   # GET /child_fatalities
   # GET /child_fatalities.json
   def index
-    @child_fatalities = ChildFatality.all
+    @child_fatalities = ChildFatality.filter params
   end
 
   # GET /child_fatalities/1
@@ -71,4 +72,8 @@ class ChildFatalitiesController < ApplicationController
     def child_fatality_params
       params.require(:child_fatality).permit(:dod, :gender, :age, :county, :priorChild, :priorVerChild, :priorTwelve, :priorFive, :priorFiveServices, :causal, :narrative)
     end
+
+	 def needs_to_scan?
+	 	ChildFatality.scan
+	 end
 end

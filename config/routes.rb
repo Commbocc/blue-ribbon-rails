@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  resources :child_fatalities
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :child_fatalities, only: [:index, :show]
+
+  root 'child_fatalities#index'
 end

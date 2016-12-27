@@ -10,6 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20161222230923) do
+
+  create_table "child_fatalities", force: :cascade do |t|
+    t.date     "dod"
+    t.string   "gender"
+    t.integer  "age"
+    t.string   "county"
+    t.boolean  "priorChild"
+    t.boolean  "priorVerChild"
+    t.boolean  "priorTwelve"
+    t.boolean  "priorFive"
+    t.boolean  "priorFiveServices"
+    t.string   "causal"
+    t.text     "narrative"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
 end
