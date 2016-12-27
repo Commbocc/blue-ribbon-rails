@@ -11,7 +11,7 @@ module ChildFatalitiesHelper
 			]
 		}.uniq.sort
 		options.unshift [column.capitalize, nil, data: {jumper: url_for(params: params.except(:action, :controller, column).to_h)}]
-		select_tag column, options_for_select( options, params[column] ), class: 'jumper-select form-control'
+		select_tag column, options_for_select( options, params[column] ), class: 'jumper-select form-control input-sm'
 	end
 
 	def year_jumper
@@ -24,7 +24,7 @@ module ChildFatalitiesHelper
 			]
 		}.uniq.sort.reverse
 		options.unshift ['Year', nil, data: {jumper: url_for(params: params.except(:action, :controller, :year).to_h)}]
-		select_tag 'year', options_for_select( options, params[:year] ), class: 'jumper-select form-control'
+		select_tag 'year', options_for_select( options, params[:year] ), class: 'jumper-select form-control input-sm'
 	end
 
 end

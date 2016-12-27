@@ -1,7 +1,7 @@
 <header class="page-header">
 	<h1>
-		<%#= @page_title -%>
-		<small>Hillsborough Child Fatalities</small>
+		<small>Hillsborough County Child Fatalities</small><br>
+		Facts &amp; Figures
 	</h1>
 
 	<%= render 'child_fatalities/partials/filters' -%>
@@ -10,7 +10,9 @@
 <p id="notice"><%= notice %></p>
 
 <p class="small text-right">
-	Last Updated: <%= @child_fatalities.last_updated.to_formatted_s(:long) if @child_fatalities.any? -%>
+	<em class="label label-info">
+		Last Updated: <%= @child_fatalities.last_updated.to_formatted_s(:long) if @child_fatalities.any? -%>
+	</em>
 </p>
 
 <%= render 'child_fatalities/partials/charts' -%>
@@ -44,9 +46,11 @@
 </div>
 
 <p class="small text-right">
-	Last Updated: <%= @child_fatalities.last_updated.to_formatted_s(:long) if @child_fatalities.any? -%>
+	<em class="label label-info">
+		Last Updated: <%= @child_fatalities.last_updated.to_formatted_s(:long) if @child_fatalities.any? -%>
+	</em>
 </p>
 
 <script type="text/javascript">
-	<%= render partial: 'child_fatalities/partials/script', formats: [:js] -%>
+<%= render partial: 'child_fatalities/partials/script', formats: [:js] -%>
 </script>

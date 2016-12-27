@@ -1,7 +1,7 @@
 <div class="row">
-	<%= content_tag :div, content_tag(:div, nil, id: 'byYear'), class: 'col-sm-12' unless params[:year].present? -%>
-	<%= content_tag :div, content_tag(:div, nil, id: 'byCause'), class: 'col-sm-4' unless params[:causal].present? -%>
-	<%= content_tag :div, content_tag(:div, nil, id: 'byGender'), class: 'col-sm-4' unless params[:gender].present? -%>
-	<%= content_tag :div, content_tag(:div, nil, id: 'byAge'), class: 'col-sm-4' unless params[:age].present? -%>
-	<%#= content_tag :div, content_tag(:div, nil, id: 'byCounty'), class: 'col-sm-4' unless params[:county].present? -%>
+	<%= content_tag :div, content_tag(:div, nil, class: 'panel panel-default', id: 'byYear'), class: 'col-md-12' unless params[:year].present? -%>
+	<%= content_tag :div, content_tag(:div, nil, class: 'panel panel-default', id: 'byCause'), class: 'col-md-4' unless params[:causal].present? -%>
+	<%= content_tag :div, content_tag(:div, nil, class: 'panel panel-default', id: 'byGender'), class: 'col-md-4' unless params[:gender].present? -%>
+	<%= content_tag :div, content_tag(:div, nil, class: 'panel panel-default', id: 'byAge'), class: 'col-md-4' unless params[:age].present? -%>
+	<%#= content_tag :div, content_tag(:div, nil, class: 'panel panel-default', id: 'byCounty'), class: 'col-md-4' unless params[:county].present? -%>
 </div>
