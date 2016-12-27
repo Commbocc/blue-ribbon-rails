@@ -1,17 +1,14 @@
 <header class="page-header">
-	<h1>
-		<small>Hillsborough County Child Fatalities</small><br>
-		Facts &amp; Figures
-	</h1>
-
 	<%= render 'child_fatalities/partials/filters' -%>
 </header>
 
 <p id="notice"><%= notice %></p>
 
+<% if @child_fatalities.any? %>
+
 <p class="small text-right">
 	<em class="label label-info">
-		Last Updated: <%= @child_fatalities.last_updated.to_formatted_s(:long) if @child_fatalities.any? -%>
+		Last Updated: <%= @child_fatalities.last_updated.to_formatted_s(:long) -%>
 	</em>
 </p>
 
@@ -34,20 +31,29 @@
 			<% @child_fatalities.each do |child_fatality| %>
 			<tr>
 				<td><%#= link_to fa_icon('info-circle fw'), url_for(child_fatality), class: 'btn btn-default btn-sm' %></td>
-				<td><%= link_to child_fatality.dod, params.merge(year: child_fatality.dod.year).permit! %></td>
-				<td><%= link_to child_fatality.gender, params.merge(gender: child_fatality.gender).permit! %></td>
-				<td><%= link_to child_fatality.age , params.merge(age: child_fatality.age).permit! %></td>
+				<td class="nowrap"><%= link_to child_fatality.dod, params.merge(year: child_fatality.dod.year).permit! %></td>
+				<td class="nowrap"><%= link_to child_fatality.gender, params.merge(gender: child_fatality.gender).permit! %></td>
+				<td class="nowrap"><%= link_to child_fatality.age , params.merge(age: child_fatality.age).permit! %></td>
 				<td><%= link_to child_fatality.causal, params.merge(causal: child_fatality.causal).permit! %></td>
-				<td><%= truncate child_fatality.narrative %></td>
+				<td><%= child_fatality.narrative %></td>
 			</tr>
 			<% end %>
 		</tbody>
 	</table>
 </div>
 
+
+<% else %>
+<p class="text-center h4">
+	<em>
+		No Records
+	</em>
+</p>
+<% end %>
+
 <p class="small text-right">
 	<em class="label label-info">
-		Last Updated: <%= @child_fatalities.last_updated.to_formatted_s(:long) if @child_fatalities.any? -%>
+		Last Updated: <%= @child_fatalities.last_updated.to_formatted_s(:long) -%>
 	</em>
 </p>
 

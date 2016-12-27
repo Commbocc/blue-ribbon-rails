@@ -5,6 +5,7 @@ class ChildFatalitiesController < ApplicationController
   # GET /child_fatalities
   # GET /child_fatalities.json
   def index
+	 @page_title = 'Facts & Figures'
     @child_fatalities = ChildFatality.filter params
   end
 

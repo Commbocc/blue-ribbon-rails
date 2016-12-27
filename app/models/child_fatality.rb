@@ -50,11 +50,11 @@ class ChildFatality < ApplicationRecord
 	end
 
 	def self.needs_scan?
-		self.last_updated.present? ? (Time.now - self.last_updated) > 5.days : true
+		self.any? ? (Time.now - self.last_updated) > 5.days : true
 	end
 
 	def self.last_updated
-		self.any? ? order(updated_at: :desc).first.try(:updated_at) : false
+		self.any? ? order(updated_at: :desc).first.try(:updated_at) : Time.now
 	end
 
 	private

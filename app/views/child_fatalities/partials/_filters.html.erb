@@ -2,9 +2,12 @@
 	<span class="lead pull-right">
 		<%= @child_fatalities.count %> <%= 'Record'.pluralize(@child_fatalities.count) %>
 	</span>
+	<strong>
+		Filter:
+	</strong>
 	<%= jumper(:year) -%>
 	<%= jumper(:causal) -%>
 	<%= jumper(:age) -%>
 	<%= jumper(:gender) -%>
-	<%= link_to 'Clear', child_fatalities_path, class: 'btn btn-warning btn-sm', data: {confirm: 'Clear all Filters?'} -%>
+	<%= link_to 'Clear', child_fatalities_path, class: 'btn btn-primary btn-sm', data: {confirm: 'Clear all Filters?'} -%>
 </form>

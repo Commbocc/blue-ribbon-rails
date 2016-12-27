@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap.min
+//= require underscore.min
+//= require navigation
 //= require highcharts
 //= require highcharts-exporting
 //= require_tree .
