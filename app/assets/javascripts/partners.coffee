@@ -6,7 +6,7 @@ $ ->
 
 	L.mapbox.accessToken = 'pk.eyJ1Ijoia2ptYWdpYzEzIiwiYSI6ImNpZzlpMGo1OTBsd2R1OWtrZjVwcHF0YmgifQ.gk94RmwBZrH90QoP2HHQXA'
 
-	map = L.mapbox.map('map', 'mapbox.streets')
+	map = L.mapbox.map('map', 'mapbox.streets') if $('#map').length
 
 	$partners = $('.brc-partner')
 	latlngs = []
@@ -31,10 +31,10 @@ $ ->
 				openModal(partner)
 				return
 
-			marker.addTo map
+			marker.addTo map if $('#map').length
 		return
 
-	map.fitBounds latlngs
+	map.fitBounds latlngs if $('#map').length
 
 	# open modal function
 	openModal = (partner) ->
