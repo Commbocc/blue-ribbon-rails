@@ -1,10 +1,12 @@
 class PartnersController < ApplicationController
+  layout false, only: [:show]
   before_action :set_partner, only: [:show, :edit, :update, :destroy]
 
   # GET /partners
   # GET /partners.json
   def index
-    @partners = Partner.all
+    @partners = Partner.page(params[:page])
+	 @page_title = 'Partners'
   end
 
   # GET /partners/1

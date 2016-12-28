@@ -17,4 +17,5 @@
 //= require navigation
 //= require highcharts
 //= require highcharts-exporting
+//= require mapbox.min
 //= require_tree .
