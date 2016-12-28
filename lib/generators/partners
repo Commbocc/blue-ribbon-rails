@@ -1,0 +1,1 @@
+rails g scaffold partners name description:text address latitude:float longitude:float phone
